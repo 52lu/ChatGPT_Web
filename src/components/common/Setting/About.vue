@@ -11,7 +11,7 @@ interface ConfigState {
   apiModel?: string
   socksProxy?: string
   httpsProxy?: string
-  usage?: string
+  balance?: string
 }
 
 const authStore = useAuthStore()
@@ -62,7 +62,7 @@ onMounted(() => {
       </div>
       <p>{{ $t("setting.api") }}：{{ config?.apiModel ?? '-' }}</p>
       <p v-if="isChatGPTAPI">
-        {{ $t("setting.monthlyUsage") }}：{{ config?.usage ?? '-' }}
+        {{ $t("setting.balance") }}：{{ config?.balance ?? '-' }}
       </p>
       <p v-if="!isChatGPTAPI">
         {{ $t("setting.reverseProxy") }}：{{ config?.reverseProxy ?? '-' }}
